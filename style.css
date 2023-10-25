@@ -1,37 +1,67 @@
+:root {
+  --nature: #86a789;
+  --sky: #cbf1f5;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: monospace;
+  color: white;
 }
 
 .container {
-  background-color: bisque;
+  background-color: #cbf1f5;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .title {
-  background-color: aquamarine;
-  width: 100vw;
-  height: 5vh;
+  text-align: center;
+  width: 100%;
+  height: 5%;
 }
 
-.timer {
-  background-color: coral;
-  width: 100vw;
-  height: 30vh;
-  font-size: 4rem;
+.clock {
+  width: 100%;
+  height: 65%;
+  font-weight: bold;
+  font-size: 8.5rem;
   text-align: center;
 }
 
-.button-container {
-  background-color: darkolivegreen;
-  width: 50vw;
-  height: 10vh;
-  margin: auto;
+.options-container,
+.stopwatch-container,
+.timer-container {
+  width: 100%;
+  height: 30%;
+}
+
+.hide {
+  display: none;
 }
 
 .button {
   padding: 10px;
+  color: black;
+  border: 2px solid black;
+}
+
+.start:hover {
+  background-color: #5d9c59;
+  border: 2px solid #5d9c59;
+  color: white;
+}
+
+.off:hover {
+  background-color: #df2e38;
+  background-color: #df2e38;
+  border: 2px solid #df2e38;
+  color: white;
+}
+
+.reset:hover {
+  background-color: #0073e6;
+  border: 2px solid #0073e6;
+  color: white;
 }

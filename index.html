@@ -8,11 +8,24 @@
   </head>
   <body>
     <div class="container">
-      <div class="title"></div>
-      <div class="timer"></div>
-      <div class="button-container">
+      <div class="title">Stopwatch & Timer</div>
+      <div class="clock"></div>
+      <div class="options-container">
+        <input
+          class="button stopwatch-option"
+          type="button"
+          value="Stopwatch"
+        />
+        <input class="button timer-option" type="button" value="Timer" />
+      </div>
+      <div class="stopwatch-container hide">
         <input class="button start" type="button" value="Start" />
-        <input class="button stop" type="button" value="Reset" />
+        <input class="button reset" type="button" value="Reset" />
+      </div>
+      <div class="timer-container hide">
+        <input class="button start" type="button" value="Start" />
+        <input class="button five-min" type="button" value="5" />
+        <input class="button ten-min" type="button" value="10" />
       </div>
     </div>
 
