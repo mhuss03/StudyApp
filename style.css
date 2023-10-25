@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: bisque;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 5vh;
+}
+
+.timer {
+  background-color: coral;
+  width: 100vw;
+  height: 30vh;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.button-container {
+  background-color: darkolivegreen;
+  width: 50vw;
+  height: 10vh;
+  margin: auto;
+}
+
+.button {
+  padding: 10px;
+}
