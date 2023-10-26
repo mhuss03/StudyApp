@@ -52,7 +52,7 @@ function count(dir) {
       hour++;
       min = 0;
     }
-  } else if (dir === 1) {
+  } else if (dir === 1 && (min > 0 || hour > 0)) {
     sec--;
     if (sec < 0) {
       min--;
@@ -107,9 +107,17 @@ reset.forEach((element) =>
     hour = 0;
     min = 0;
     sec = 0;
-    clock.innerHTML = `${hour.toString().padStart(2, "0")}:${min
-      .toString()
-      .padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
+    updateclock();
+    stopclock();
+
+    state = 0;
+    if (stopwatchContainer.classList.contains("hide")) {
+      start[1].classList.remove("off");
+      start[1].value = "Start";
+    } else if (timerContainer.classList.contains("hide")) {
+      start[0].classList.remove("off");
+      start[0].value = "Start";
+    }
   })
 );
 
@@ -120,16 +128,33 @@ back.forEach((element) =>
     stopwatchContainer.classList.add("hide");
     timerContainer.classList.add("hide");
     optionList.classList.remove("hide");
+    hour = 0;
+    min = 0;
+    sec = 0;
+    updateclock();
+    stopclock();
   })
 );
 
 /* Timer 5 10  */
+function setTimer() {
+  if (sec > 59) {
+    min++;
+    sec = 0;
+  }
+  if (min > 59) {
+    hour++;
+    min = 0;
+  }
+}
 
 fiveMin.addEventListener("click", () => {
   min += 5;
+  setTimer();
   updateclock();
 });
 tenMin.addEventListener("click", () => {
   min += 10;
+  setTimer();
   updateclock();
 });
