@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="timer.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title"><h1>Stopwatch & Timer</h1></div>
+      <div class="clock"></div>
+      <div class="super-container">
+        <div class="options-container">
+          <input
+            class="button stopwatch-option"
+            type="button"
+            value="Stopwatch"
+          />
+          <input class="button timer-option" type="button" value="Timer" />
+        </div>
+        <div class="stopwatch-container hide">
+          <input class="button start" type="button" value="Start" />
+          <input class="button reset" type="button" value="Reset" />
+          <input class="button back" type="button" value="Back" />
+        </div>
+        <div class="timer-container hide">
+          <input class="button start" type="button" value="Start" />
+          <input class="button reset" type="button" value="Reset" />
+          <input class="button five-min" type="button" value="5 Minutes" />
+          <input class="button ten-min" type="button" value="10 Minutes" />
+          <input class="button back" type="button" value="Back" />
+        </div>
+      </div>
+    </div>
+
+    <script src="timer.js"></script>
+  </body>
+</html>
