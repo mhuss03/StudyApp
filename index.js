@@ -47,6 +47,9 @@ function updateTask(task) {
   const del = document.createElement("button");
   const check = document.createElement("input");
 
+  check.classList.add("check");
+  div.classList.add("task-items");
+  del.classList.add("delete");
   check.type = "checkbox";
   label.innerText = task;
   div.append(label, check, del);
@@ -63,9 +66,9 @@ function updateTask(task) {
 
   check.addEventListener("change", () => {
     if (check.checked) {
-      div.style.backgroundColor = "coral";
-    } else {
       div.style.backgroundColor = "lightgreen";
+    } else {
+      div.style.backgroundColor = "white";
     }
   });
 }
