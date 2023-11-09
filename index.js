@@ -23,80 +23,53 @@ const taskContainer = document.getElementById("task-container");
 // let taskData = JSON.parse(localStorage.getItem("taskData")) || [];
 
 /*      *** Add Task  ***     */
-taskData = [];
+taskData = JSON.parse(localStorage.getItem("taskData")) || [];
 
 addTask.addEventListener("click", (e) => {
   e.preventDefault();
-  taskData.push(inputTask.value);
-  localStorage.setItem("taskData", JSON.stringify(taskData));
 
-  const items = JSON.parse(localStorage.getItem("taskData"));
-  for (const element of items) {
-    const div = document.createElement("div");
-    const label = document.createElement("label");
-    const del = document.createElement("button");
+  task = inputTask.value;
 
-    label.innerText = element;
-    div.append(label, del);
-    taskContainer.appendChild(div);
-  }
+  storeData(task);
+  updateTask(task);
+
+  inputTask.value = "";
 });
 
-// addTask.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let taskstatus = 0;
-//   task = inputTask.value;
-//   storeData(task, taskstatus);
+function storeData(task) {
+  taskData.push(task);
+  localStorage.setItem("taskData", JSON.stringify(taskData));
+}
 
-//   updateTask(task, taskstatus);
-// });
+function updateTask(task) {
+  const div = document.createElement("div");
+  const label = document.createElement("label");
+  const del = document.createElement("button");
+  const check = document.createElement("input");
 
-// function storeData(task, taskstatus) {
-//   taskData.push({ task, taskstatus });
+  check.type = "checkbox";
+  label.innerText = task;
+  div.append(label, check, del);
+  taskContainer.appendChild(div);
 
-//   localStorage.setItem("taskData", JSON.stringify(taskData));
-// }
+  del.addEventListener("click", () => {
+    taskData.splice(
+      taskData.findIndex((e) => e === task),
+      1
+    );
+    div.remove();
+    localStorage.setItem("taskData", JSON.stringify(taskData));
+  });
 
-// /*      *** Update Task Section ***     */
-// let count = 0;
-// function updateTask(task, taskstatus) {
-//   const div = document.createElement("div");
-//   const label = document.createElement("label");
-//   const status = document.createElement("input");
-//   const del = document.createElement("button");
+  check.addEventListener("change", () => {
+    if (check.checked) {
+      div.style.backgroundColor = "coral";
+    } else {
+      div.style.backgroundColor = "lightgreen";
+    }
+  });
+}
 
-//   status.type = "checkbox";
-//   del.classList.add(`delete`);
-//   del.classList.add(`${count}`);
-
-//   label.innerText = task;
-
-//   div.append(label, status, del);
-//   taskContainer.appendChild(div);
-//   count++;
-// }
-
-// taskData.forEach((element) => {
-//   updateTask(element.task, element.status);
-// });
-
-// /*      *** Delete Task Section ***     */
-
-// const deleteTask = document.querySelectorAll(".delete");
-
-// deleteTask.forEach((element) => {
-//   element.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     const currentItem = JSON.parse(localStorage.getItem("taskData"));
-
-//     for (let i = 0; i < taskData.length; i++) {
-//       if (element.classList.contains(`${i}`)) {
-//         taskData.splice(i, 1);
-//       }
-//     }
-
-//     element.parentElement.remove();
-//     localStorage.setItem("taskData", JSON.stringify(taskData));
-//   });
-// });
+for (const element of taskData) {
+  updateTask(element);
+}
