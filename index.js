@@ -24,16 +24,23 @@ const taskContainer = document.getElementById("task-container");
 
 /*      *** Add Task  ***     */
 taskData = JSON.parse(localStorage.getItem("taskData")) || [];
+taskCount = taskData.length;
 
 addTask.addEventListener("click", (e) => {
   e.preventDefault();
 
-  task = inputTask.value;
+  taskCount++;
+  if (taskCount < 7) {
+    task = inputTask.value;
 
-  storeData(task);
-  updateTask(task);
+    storeData(task);
+    updateTask(task);
 
-  inputTask.value = "";
+    inputTask.value = "";
+  } else {
+    alert("Delete a task");
+    taskCount--;
+  }
 });
 
 function storeData(task) {
@@ -46,16 +53,18 @@ function updateTask(task) {
   const label = document.createElement("label");
   const del = document.createElement("button");
   const check = document.createElement("input");
+  const hr = document.createElement("hr");
 
   check.classList.add("check");
   div.classList.add("task-items");
   del.classList.add("delete");
   check.type = "checkbox";
   label.innerText = task;
-  div.append(label, check, del);
+  div.append(label, check, del, hr);
   taskContainer.appendChild(div);
 
   del.addEventListener("click", () => {
+    taskCount--;
     taskData.splice(
       taskData.findIndex((e) => e === task),
       1
