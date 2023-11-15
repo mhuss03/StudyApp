@@ -1,0 +1,33 @@
+body {
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+iframe {
+}
+
+#task {
+  width: 80%;
+  height: 30%;
+}
+
+#timer {
+  width: 19%;
+  height: 30%;
+}
+
+#note {
+  width: 80%;
+  height: auto;
+}
+
+#bgm {
+  width: 19%;
+  height: 45%;
+}

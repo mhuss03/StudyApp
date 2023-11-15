@@ -4,9 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="note.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
+    <div class="container">
+      <form id="form">
+        <h1>Note Taking App</h1>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title of the Note"
+          autocomplete="off"
+          required
+        />
+        <input
+          type="text"
+          name="note"
+          id="note"
+          placeholder="Write your note here"
+          autocomplete="off"
+          required
+        />
+        <button id="add">Add Note</button>
+      </form>
+      <div class="note-container"></div>
+    </div>
     <script src="note.js"></script>
   </body>
 </html>

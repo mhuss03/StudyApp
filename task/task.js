@@ -5,10 +5,10 @@ const addTask = form["add"];
 
 const taskContainer = document.getElementById("task-container");
 
-// let taskData = JSON.parse(localStorage.getItem("taskData")) || [];
+let taskData = JSON.parse(localStorage.getItem("taskData")) || [];
 
 /*      *** Add Task  ***     */
-taskData = JSON.parse(localStorage.getItem("taskData")) || [];
+
 taskCount = taskData.length;
 
 addTask.addEventListener("click", (e) => {
