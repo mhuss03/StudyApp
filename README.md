@@ -6,7 +6,7 @@ The All-in-One Study App is an integrated web application offering a suite of st
 
 - **Task Tracker:** Keep track of your tasks with a simple and intuitive task tracker.
 - **Note-Taking System:** Jot down important notes and organize them effectively.
-- **Timer:** Use the built-in timer to manage your study sessions efficiently.
+- **Timer:** Enhance your productivity with a built-in timer. Choose between a stopwatch or a timer with customisable intervals.
 - **Background Music Player:** Enjoy background music while you study with the integrated music player.
 
 ### Local Storage
@@ -28,6 +28,8 @@ The app's design was meticulously planned using [Figma](https://www.figma.com/) 
 | ![Figma Design](https://github.com/mhuss03/StudyApp/blob/main/Concept.PNG?raw=true) | ![Color Palette](https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/646ce8ce78b18cea23c6a65a_143d785c.png) |
 ## Preview
 
-| View 1 | View 1 |
-|--------------|---------------|
-| ![View 1](https://github.com/mhuss03/StudyApp/blob/main/Task.PNG?raw=true) | ![View 2](https://github.com/mhuss03/StudyApp/blob/main/Note.PNG?raw=true) |
+### View 1
+![View 1](https://github.com/mhuss03/StudyApp/blob/main/Task.PNG?raw=true)
+
+### View 2
+![View 2](https://github.com/mhuss03/StudyApp/blob/main/Note.PNG?raw=true) 
