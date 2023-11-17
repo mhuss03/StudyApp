@@ -4,14 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Study App</title>
   </head>
   <body>
     <div class="container">
-      <iframe src="task/task.html" frameborder="0" id="task"></iframe>
-      <iframe src="timer/timer.html" frameborder="0" id="timer"></iframe>
-      <iframe src="note/note.html" frameborder="0" id="note"></iframe>
-      <iframe src="BGM/bgm.html" frameborder="0" id="bgm"></iframe>
+      <div class="task-box-container">
+        <form id="task-form">
+          <h1>Task Tracker</h1>
+          <fieldset id="input-container">
+            <input
+              id="input-box"
+              type="text"
+              name="input"
+              autocomplete="off"
+              placeholder="What task would you like to add"
+            /><button id="add-task" name="add">ADD</button>
+          </fieldset>
+          <fieldset id="task-container"></fieldset>
+        </form>
+      </div>
+      <div class="note-box-container hide">
+        <form id="note-form">
+          <h1 style="color: #595f39">Notes</h1>
+          <input
+            type="text"
+            name="title"
+            class="input"
+            id="title"
+            placeholder="Title of the Note"
+            autocomplete="off"
+            required
+          />
+          <textarea
+            name="note"
+            id="note"
+            cols="30"
+            rows="3"
+            placeholder="Write Your Note Here"
+            autocomplete="off"
+            maxlength="162"
+            required
+          ></textarea>
+
+          <button id="add-note">Add</button>
+          <div class="note-container"></div>
+        </form>
+      </div>
+      <div class="timer-box-container">
+        <h1>Stopwatch Timer</h1>
+        <div class="clock"></div>
+        <div class="super-container">
+          <div class="options-container">
+            <input
+              class="button stopwatch-option"
+              type="button"
+              value="Stopwatch"
+            />
+            <input class="button timer-option" type="button" value="Timer" />
+          </div>
+          <div class="stopwatch-container hide">
+            <input class="button start" type="button" value="Start" />
+            <input class="button reset" type="button" value="Reset" />
+            <input class="button back" type="button" value="Back" />
+          </div>
+          <div class="timer-container hide">
+            <input class="button start" type="button" value="Start" />
+            <input class="button reset" type="button" value="Reset" />
+            <input class="button five-min" type="button" value="5 Minutes" />
+            <input class="button ten-min" type="button" value="10 Minutes" />
+            <input class="button back" type="button" value="Back" />
+          </div>
+        </div>
+      </div>
+      <div class="bgm">
+        <input type="text" id="url" placeholder="Enter YouTube Video URL" />
+        <button id="vid-button">Load Video</button>
+        <div id="vid-container"></div>
+      </div>
+      <button class="change-button" id="task-button"></button>
+      <button class="change-button" id="note-button"></button>
     </div>
     <script src="index.js"></script>
   </body>

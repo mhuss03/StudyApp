@@ -1,6 +1,6 @@
-const form = document.getElementById("form");
-const noteTitle = form["title"];
-const noteInput = form["note"];
+const noteForm = document.getElementById("note-form");
+const noteTitle = noteForm["title"];
+const noteInput = noteForm["note"];
 
 const addNote = document.getElementById("add");
 

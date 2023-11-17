@@ -1,7 +1,7 @@
-const form = document.getElementById("form");
-const inputTask = form["input"];
+const taskForm = document.getElementById("task-form");
+const inputTask = taskForm["input"];
 
-const addTask = form["add"];
+const addTask = taskForm["add"];
 
 const taskContainer = document.getElementById("task-container");
 
