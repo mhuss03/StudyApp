@@ -19,8 +19,8 @@ body {
 
 .container {
   background-color: var(--sophisticated-sage);
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 90vh;
   margin: 50px auto;
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -257,13 +257,17 @@ body {
   padding: 10px;
 }
 
+.bgm-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 #url {
   border: none;
-  margin-left: 10%;
-  width: 50%;
+  width: 21rem;
   padding: 10px 5px;
   background-color: var(--ethereal-ivory);
-  margin-bottom: 10px;
 }
 
 #vid-button {
